@@ -1,0 +1,37 @@
+# General
+alias path='echo -e ${PATH//:/\\n}'
+alias copy="tr -d '\n' | pbcopy"
+alias cat='bat'
+alias sudo='sudo '
+alias mkd="mkd(){ mkdir -p '$1'; cd '$1' }; mkd "
+
+# Files
+alias a='${EDITOR} $HOME/.dotfiles/.aliases'
+alias zshrc='${EDITOR} $HOME/.zshrc'
+alias vimrc='${EDITOR} $HOME/.vimrc'
+alias brewfile='${EDITOR} $HOME/Brewfile'
+alias sshconfig='${EDITOR} $HOME/.ssh/config'
+alias hostfile='sudo ${EDITOR} /etc/hosts'
+
+# SSH
+alias pubkey='pbcopy < $HOME/.ssh/id_rsa.pub; echo "Public SSH key copied"'
+
+# Git
+alias nah='git reset --hard;git clean -df'
+
+# JavaScript
+alias jest='./node_modules/.bin/jest'
+
+# PHP
+alias php72='valet use php@7.2'
+alias php73='valet use php@7.3'
+alias php74='valet use php'
+alias art='php artisan'
+alias phpunit='./vendor/bin/phpunit'
+alias pu='phpunit'
+
+# Miscellaneous
+alias ip='curl -s https://ipinfo.io/ip'
+alias localip='ipconfig getifaddr en0'
+alias speedtest='speedtest --simple'
+alias week='date +%V'

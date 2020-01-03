@@ -1,0 +1,5 @@
+# Set default editor
+export EDITOR=vim
+
+# Configure Xdebug
+export XDEBUG_CONFIG="idekey=VSCODE"
