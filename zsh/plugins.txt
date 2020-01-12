@@ -1,0 +1,11 @@
+robbyrussell/oh-my-zsh
+robbyrussell/oh-my-zsh path:plugins/autojump
+robbyrussell/oh-my-zsh path:plugins/dotenv
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/osx
+robbyrussell/oh-my-zsh path:plugins/pyenv
+robbyrussell/oh-my-zsh path:plugins/sudo
+robbyrussell/oh-my-zsh path:plugins/web-search
+lukechilds/zsh-nvm
+zdharma/fast-syntax-highlighting
+zsh-users/zsh-autosuggestions
