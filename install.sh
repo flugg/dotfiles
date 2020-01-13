@@ -1,3 +1,5 @@
+export DOTFILES="$( cd "$( dirname "$0" )" && pwd )"
+
 message () {
   printf "› \e[1;36m%s\e[0m\n" "$1"
 }
@@ -33,7 +35,7 @@ else
   echo "$HOME/.hushlogin already exists"
 fi
 
-sh ${BASEDIR}/git/install.sh
-sh ${BASEDIR}/git/macos.sh
-sh ${BASEDIR}/git/zsh.sh
-sh ${BASEDIR}/git/vim.sh
+sh ${DOTFILES}/git/install.sh
+sh ${DOTFILES}/git/macos.sh
+sh ${DOTFILES}/git/zsh.sh
+sh ${DOTFILES}/git/vim.sh
