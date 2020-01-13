@@ -1,5 +1,7 @@
 source $DOTFILES/functions.sh
 
+ZSH=${ZSH:-$HOME/.oh-my-zsh}
+
 # Zsh
 message "Installing Oh My Zsh"
 

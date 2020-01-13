@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Set the DOTFILES variable before calling this script to override the folder below
 export DOTFILES=${DOTFILES:-$HOME/.dotfiles}
 
