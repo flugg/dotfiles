@@ -16,6 +16,7 @@ if [[ ! -e $HOME/.gitconfig ]]; then
 
   git config --global user.name "$user_name"
   git config --global user.email "$user_email"
+  echo "Updated $HOME/.gitconfig with name and email address"
 else
   echo "$HOME/.gitconfig already exists"
 fi
