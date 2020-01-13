@@ -1,9 +1,9 @@
-# General
-alias path='echo -e ${PATH//:/\\n}'
-alias copy="tr -d '\n' | pbcopy"
-alias sudo='sudo '
-alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew" # Fixes 'brew doctor' bug
-alias afk="open -a /System/Library/CoreServices/ScreenSaverEngine.app"
+# Miscellaneous
+alias sudo='sudo ' # Allows sudo for all aliases
+alias path='echo -e ${PATH//:/\\n}' # List all paths registered
+alias copy="tr -d '\n' | pbcopy" # Removes the new-line added by pbcopy
+alias afk="open -a /System/Library/CoreServices/ScreenSaverEngine.app" # Starts screensaver
+alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew" # Fixes 'brew doctor' bug for Pyenv
 
 # Information
 alias ip='curl -s https://ipinfo.io/ip'
@@ -11,7 +11,7 @@ alias localip='ipconfig getifaddr en0'
 alias speedtest='speedtest --simple'
 alias week='date +%V'
 
-# Folders
+# Directories
 alias mkd="mkd(){ mkdir -p '$1'; cd '$1' }; mkd "
 alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias finder='ofd'

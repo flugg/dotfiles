@@ -1,3 +1,5 @@
+source $DOTFILES/functions.sh
+
 # Zsh
 message "Installing Oh My Zsh"
 

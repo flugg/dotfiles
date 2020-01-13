@@ -1,23 +1,6 @@
 export DOTFILES="$( cd "$( dirname "$0" )" && pwd )"
 
-message () {
-  printf "› \e[1;36m%s\e[0m\n" "$1"
-}
-
-question () {
-  printf "\e[1;29m%s\e[0m\n" "$1"
-}
-
-error () {
-  printf "\e[1;31m%s\e[0m\n" "$1"
-  exit
-}
-
-check_dependency () {
-  if [[ $(command -v $1) == "" ]]; then
-    error "Required dependency $1 is not installed"
-  fi
-}
+source $DOTFILES/functions.sh
 
 # Check Dependencies
 message "Checking dependencies"
@@ -35,7 +18,8 @@ else
   echo "$HOME/.hushlogin already exists"
 fi
 
+# Source other installation files
 source ${DOTFILES}/git/install.sh
-source ${DOTFILES}/macos/install.sh
+source ${DOTFILES}/mac/install.sh
 source ${DOTFILES}/zsh/install.sh
 source ${DOTFILES}/vim/install.sh

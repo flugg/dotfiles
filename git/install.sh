@@ -1,3 +1,5 @@
+source $DOTFILES/functions.sh
+
 # Git
 message "Configuring Git"
 if [[ ! -e $HOME/.gitconfig ]]; then
