@@ -1,9 +1,20 @@
 # General
 alias path='echo -e ${PATH//:/\\n}'
 alias copy="tr -d '\n' | pbcopy"
-alias cat='bat'
 alias sudo='sudo '
+alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew" # Fixes 'brew doctor' bug
+alias afk="open -a /System/Library/CoreServices/ScreenSaverEngine.app"
+
+# Information
+alias ip='curl -s https://ipinfo.io/ip'
+alias localip='ipconfig getifaddr en0'
+alias speedtest='speedtest --simple'
+alias week='date +%V'
+
+# Folders
 alias mkd="mkd(){ mkdir -p '$1'; cd '$1' }; mkd "
+alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias finder='ofd'
 
 # Files
 alias a='${EDITOR} $HOME/.dotfiles/.aliases'
@@ -29,9 +40,3 @@ alias php74='valet use php'
 alias art='php artisan'
 alias phpunit='./vendor/bin/phpunit'
 alias pu='phpunit'
-
-# Miscellaneous
-alias ip='curl -s https://ipinfo.io/ip'
-alias localip='ipconfig getifaddr en0'
-alias speedtest='speedtest --simple'
-alias week='date +%V'
