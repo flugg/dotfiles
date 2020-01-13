@@ -1,3 +1,6 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+[user]
+	name = Alexander Tømmerås
+	email = flugged@gmail.com

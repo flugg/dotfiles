@@ -35,7 +35,7 @@ else
   echo "$HOME/.hushlogin already exists"
 fi
 
-sh ${DOTFILES}/git/install.sh
-sh ${DOTFILES}/git/macos.sh
-sh ${DOTFILES}/git/zsh.sh
-sh ${DOTFILES}/git/vim.sh
+source ${DOTFILES}/git/install.sh
+source ${DOTFILES}/macos/install.sh
+source ${DOTFILES}/zsh/install.sh
+source ${DOTFILES}/vim/install.sh

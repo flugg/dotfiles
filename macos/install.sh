@@ -2,6 +2,7 @@
 message "Configuring Homebrew"
 if [[ ! -e $HOME/Brewfile ]]; then
   echo "Linking $HOME/.dotfiles/macos/Brewfile to $HOME/Brewfile"
+  ln -s $HOME/.dotfiles/macos/Brewfile $HOME/Brewfile
 else
   echo "$HOME/Brewfile already exists"
 fi
