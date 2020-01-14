@@ -1,4 +1,6 @@
 current_dir="$( cd "$( dirname "$0" )" && pwd )"
+installers=(git brew zsh vim mac)
+
 message=$(tput bold)$(tput setaf 6)
 error=`tput setaf 1`
 success=`tput setaf 2`
@@ -16,14 +18,16 @@ check_dependencies () {
 }
 
 run_all_installers() {
-  find $current_dir -name install.sh -mindepth 2 | while read installer ; do sh "${installer}" ; done
+	for installer in "${installers[@]}"; do
+		sh "${current_dir}/${installer}/install.sh"
+	done
 }
 
 echo "› ${message}Checking dependencies${reset}"
 check_dependencies curl git zsh
 echo "${success}All dependencies installed${reset}"
 
-echo "› ${message}Hides 'Last login' message${reset}"
+echo "› ${message}Hiding 'Last login' message${reset}"
 if [[ ! -e $HOME/.hushlogin ]]; then
   echo "Creating ${HOME}/.hushlogin"
   touch $HOME/.hushlogin
