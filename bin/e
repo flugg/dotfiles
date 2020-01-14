@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# e - Quick shortcut to an editor.
+
+exec "$VEDITOR" "${1:-.}"
