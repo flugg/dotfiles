@@ -1,25 +1,35 @@
 export DOTFILES="$( cd "$( dirname "$0" )" && pwd )"
 
-source $DOTFILES/functions.sh
+message=$(tput bold)$(tput setaf 6)
+error=`tput setaf 1`
+success=`tput setaf 2`
+info=`tput setaf 3`
+reset=`tput sgr0`
 
-# Check Dependencies
-message "Checking dependencies"
-check_dependency curl
-check_dependency git
-check_dependency zsh
-echo "All dependencies installed"
+check_dependencies () {
+	while test $# -gt 0; do
+    if [[ $(command -v $1) == "" ]]; then
+      echo "${error}Required dependency ${1} is not installed${reset}"
+      exit
+    fi
+    shift
+	done
+}
 
-# General
-message "Hides 'Last login' message"
+run_all_installers() {
+  find $DOTFILES -name install.sh -mindepth 2 | while read installer ; do sh "${installer}" ; done
+}
+
+echo "› ${message}Checking dependencies${reset}"
+check_dependencies curl git zsh
+echo "${success}All dependencies installed${reset}"
+
+echo "› ${message}Hides 'Last login' message${reset}"
 if [[ ! -e $HOME/.hushlogin ]]; then
-  echo "Creating $HOME/.hushlogin"
+  echo "Creating ${HOME}/.hushlogin"
   touch $HOME/.hushlogin
 else
-  echo "$HOME/.hushlogin already exists"
+  echo "${info}${HOME}/.hushlogin already exists${reset}"
 fi
 
-# Source other installation files
-source ${DOTFILES}/git/install.sh
-source ${DOTFILES}/mac/install.sh
-source ${DOTFILES}/zsh/install.sh
-source ${DOTFILES}/vim/install.sh
+run_all_installers

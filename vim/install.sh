@@ -1,10 +1,13 @@
-source $DOTFILES/functions.sh
+message=$(tput bold)$(tput setaf 6)
+success=`tput setaf 2`
+info=`tput setaf 3`
+reset=`tput sgr0`
 
-# Vim
-message "Configuring Vim"
+echo "› ${message}Configuring Vim...${reset}"
+
 if [[ ! -e $HOME/.vimrc ]]; then
-  echo "Linking $HOME/.dotfiles/vim/.vimrc to $HOME/.vimrc"
   ln -s $HOME/.dotfiles/vim/.vimrc $HOME/.vimrc
+  echo "${success}Linked ${HOME}/.dotfiles/vim/.vimrc to ${HOME}/vimrc.${reset}"
 else
-  echo "$HOME/.vimrc already exists"
+  echo "${info}${HOME}/.vimrc already exists.${reset}"
 fi
