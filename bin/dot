@@ -3,7 +3,8 @@
 # dot - CLI for installing dotfiles
 
 version=0.1.0
-installers=(brew git mac vim zsh)
+current_dir="$( cd "$( dirname "$0" )" && pwd )"
+commands=(`find "$current_dir/.." -name install.sh -mindepth 2 | sort | xargs -n1 dirname | xargs -n1 basename`)
 
 red=`tput setaf 1`
 green=`tput setaf 2`
@@ -18,21 +19,18 @@ usage() {
 	echo "  dot [command] [options]"
 	echo ""
 	echo "${blue}Commands:${reset}"
-	commands
+
+	for command in "${commands[@]}"; do
+		name="$(tr '[:lower:]' '[:upper:]' <<< ${command:0:1})${command:1}"
+		echo "  ${green}${command}${reset}\tInstall $name dotfiles";
+	done
+	
 	echo ""
 	echo "${blue}Options:${reset}"
 	echo "  ${green}-h, --help${reset}     Show this help screen"
 	echo "  ${green}-v, --version${reset}  Show the version"
 	echo "  ${green}-e, --edit${reset}     Open dotfiles directory in editor"
 	exit
-}
-
-# Print a list of commands
-commands() {
-	for installer in "${installers[@]}"; do
-		name="$(tr '[:lower:]' '[:upper:]' <<< ${installer:0:1})${installer:1}"
-		echo "  ${green}${installer}${reset}\tInstall $name dotfiles";
-	done
 }
 
 # Run a dotfiles installer
@@ -44,12 +42,11 @@ install() {
 	fi
 }
 
-# If no arguments are passed, we will run the installer for everything
 if [[ $# -eq 0 ]] ; then
+	# If no arguments are passed, we will run the installer for everything
 	install
-
-# If we have arguments, we will loop through them and call the correct command
 else
+	# If we have arguments, we will loop through them and call the correct command
 	while test $# -gt 0; do
 		if [[ "${installers[@]}" =~ "$1" ]]; then
 			install $1
