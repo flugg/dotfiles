@@ -1,3 +1,6 @@
+# Path to dotfiles
+export DOTFILES="$HOME/.dotfiles"
+
 # Set default editors
 export EDITOR="vim"
 export VEDITOR="code"
