@@ -1,5 +1,4 @@
-export DOTFILES="$( cd "$( dirname "$0" )" && pwd )"
-
+current_dir="$( cd "$( dirname "$0" )" && pwd )"
 message=$(tput bold)$(tput setaf 6)
 error=`tput setaf 1`
 success=`tput setaf 2`
@@ -17,7 +16,7 @@ check_dependencies () {
 }
 
 run_all_installers() {
-  find $DOTFILES -name install.sh -mindepth 2 | while read installer ; do sh "${installer}" ; done
+  find $current_dir -name install.sh -mindepth 2 | while read installer ; do sh "${installer}" ; done
 }
 
 echo "› ${message}Checking dependencies${reset}"
