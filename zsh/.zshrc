@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Source shell files
-for file in $HOME/.dotfiles/zsh/.{exports,functions,path,config,aliases}.zsh; do
+for file in $HOME/.dotfiles/zsh/.{dotfiles,exports,functions,path,config,aliases}.zsh; do
   [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
