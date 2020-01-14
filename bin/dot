@@ -6,30 +6,30 @@ version=0.1.0
 current_dir="$( cd "$( dirname "$0" )" && pwd )"
 commands=(`find "$current_dir/.." -name install.sh -mindepth 2 | sort | xargs -n1 dirname | xargs -n1 basename`)
 
-red=`tput setaf 1`
-green=`tput setaf 2`
-blue=`tput setaf 6`
+error=`tput setaf 1`
+success=`tput setaf 2`
+header=`tput setaf 6`
 reset=`tput sgr0`
 
 # Print the usage screen
 usage() {
 	echo "Dotfiles ${green}${version}${reset}"
 	echo ""
-	echo "${blue}Usage:${reset}"
+	echo "${header}Usage:${reset}"
 	echo "  dot [command] [options]"
 	echo ""
-	echo "${blue}Commands:${reset}"
+	echo "${header}Commands:${reset}"
 
 	for command in "${commands[@]}"; do
 		name="$(tr '[:lower:]' '[:upper:]' <<< ${command:0:1})${command:1}"
-		echo "  ${green}${command}${reset}\tInstall $name dotfiles";
+		echo "  ${success}${command}${reset}\tInstall $name dotfiles";
 	done
 	
 	echo ""
-	echo "${blue}Options:${reset}"
-	echo "  ${green}-h, --help${reset}     Show this help screen"
-	echo "  ${green}-v, --version${reset}  Show the version"
-	echo "  ${green}-e, --edit${reset}     Open dotfiles directory in editor"
+	echo "${header}Options:${reset}"
+	echo "  ${success}-h, --help${reset}     Show this help screen"
+	echo "  ${success}-v, --version${reset}  Show the version"
+	echo "  ${success}-e, --edit${reset}     Open dotfiles directory in editor"
 	exit
 }
 
@@ -48,7 +48,7 @@ if [[ $# -eq 0 ]] ; then
 else
 	# If we have arguments, we will loop through them and call the correct command
 	while test $# -gt 0; do
-		if [[ "${installers[@]}" =~ "$1" ]]; then
+		if [[ "${commands[@]}" =~ "$1" ]]; then
 			install $1
 			exit
 		fi
@@ -66,7 +66,7 @@ else
 				exit
 				;;
 			*)
-				echo "Command not recognized: $1"
+				echo "${error}Command not recognized: ${1}${reset}"
 				echo ""
 				usage
 				;;
