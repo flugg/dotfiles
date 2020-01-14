@@ -4,11 +4,11 @@ info=`tput setaf 3`
 reset=`tput sgr0`
 
 echo "› ${message}Configuring Homebrew...${reset}"
-if [[ ! -e $HOME/Brewfile ]]; then
-  ln -s $HOME/.dotfiles/brew/Brewfile $HOME/Brewfile
-  echo "${success}Linked ${HOME}/.dotfiles/brew/Brewfile to ${HOME}/Brewfile.${reset}"
+if [[ ! -e $HOME/.brewfile ]]; then
+  ln -s $HOME/.dotfiles/brew/.brewfile $HOME/.brewfile
+  echo "${success}Linked ${HOME}/.dotfiles/brew/.brewfile to ${HOME}/.brewfile.${reset}"
 else
-  echo "${info}${HOME}/Brewfile already exists.${reset}"
+  echo "${info}${HOME}/.brewfile already exists.${reset}"
 fi
 
 if [[ $(command -v brew) == "" ]]; then
@@ -21,4 +21,4 @@ else
 fi
 
 echo "› ${message}Installing Homebrew packages...${reset}"
-(cd $HOME && brew bundle)
+brew bundle --global --no-lock --file=.brewfile
