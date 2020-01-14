@@ -21,8 +21,8 @@ usage() {
 	commands
 	echo ""
 	echo "${blue}Options:${reset}"
-	echo "  ${green}-h, --help${reset}     Show the version"
-	echo "  ${green}-v, --version${reset}  Show this help screen"
+	echo "  ${green}-h, --help${reset}     Show this help screen"
+	echo "  ${green}-v, --version${reset}  Show the version"
 	echo "  ${green}-e, --edit${reset}     Open dotfiles directory in editor"
 	exit
 }
