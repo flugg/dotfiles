@@ -1,3 +1,6 @@
+# Export path used for dotfiles
+export PATH="$DOTFILES/bin:$PATH"
+
 # Export path used for Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
