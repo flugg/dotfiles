@@ -17,10 +17,10 @@ alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias finder='ofd'
 
 # Files
-alias a='${EDITOR} $HOME/.dotfiles/.aliases'
+alias a='${EDITOR} $DOTFILES/zsh/.aliases'
 alias zshrc='${EDITOR} $HOME/.zshrc'
 alias vimrc='${EDITOR} $HOME/.vimrc'
-alias brewfile='${EDITOR} $HOME/Brewfile'
+alias brewfile='${EDITOR} $HOME/.brewfile'
 alias sshconfig='${EDITOR} $HOME/.ssh/config'
 alias hostfile='sudo ${EDITOR} /etc/hosts'
 
