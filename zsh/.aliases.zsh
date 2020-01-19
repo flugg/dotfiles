@@ -17,7 +17,7 @@ alias icloud='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias finder='ofd'
 
 # Files
-alias a='${EDITOR} $DOTFILES/zsh/.aliases'
+alias a='${EDITOR} $DOTFILES/zsh/.aliases.zsh'
 alias zshrc='${EDITOR} $HOME/.zshrc'
 alias vimrc='${EDITOR} $HOME/.vimrc'
 alias brewfile='${EDITOR} $HOME/.brewfile'
