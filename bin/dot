@@ -61,6 +61,10 @@ else
 				echo $version
 				exit
 				;;
+			"-u"|"--upgrade")
+				(cd $HOME/.dotfiles && git pull)
+				exit
+				;;
 			"-e"|"--edit")
 				exec e "$DOTFILES"
 				exit
