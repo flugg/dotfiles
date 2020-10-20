@@ -29,7 +29,7 @@ usage() {
 	echo "${header}Options:${reset}"
 	echo "  ${success}-h, --help${reset}     Show this help screen"
 	echo "  ${success}-v, --version${reset}  Show the version"
-	echo "  ${success}-s, --sync${reset}     Sync dotfiles with Git"
+	echo "  ${success}-s, --sync${reset}     Sync dotfiles directory with Git"
 	echo "  ${success}-e, --edit${reset}     Open dotfiles directory in editor"
 	exit
 }
@@ -62,8 +62,9 @@ else
 				echo $version
 				exit
 				;;
-			"-u"|"--upgrade")
-				(cd $HOME/.dotfiles && git pull)
+			"-s"|"--sync")
+			git commit -a -m
+				(cd $HOME/.dotfiles && git commit -a -m "Sync local dotfiles changes" && git pull && git push)
 				exit
 				;;
 			"-e"|"--edit")
