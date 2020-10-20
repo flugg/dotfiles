@@ -9,6 +9,7 @@ reset=`tput sgr0`
 echo "› ${message}Installing Oh My Zsh...${reset}"
 if [[ ! -d $ZSH ]]; then
   curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  rm $HOME/.zshrc
 else
   echo "${info}Already installed.${reset}"
 fi
