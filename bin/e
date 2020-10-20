@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # e - Quick shortcut to an editor.
 

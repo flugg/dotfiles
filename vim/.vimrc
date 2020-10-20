@@ -1,3 +1,6 @@
+set nocompatible
+set viminfo+=n~/.cache/.viminfo
+
 "Enable syntax highlighting."
 syntax enable
 

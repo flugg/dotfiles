@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # dot - CLI for installing dotfiles
 
@@ -41,6 +41,8 @@ install() {
 	else
 		$DOTFILES/$1/install.sh
 	fi
+
+	source $HOME/.zshrc
 }
 
 if [[ $# -eq 0 ]] ; then

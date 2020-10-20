@@ -30,5 +30,3 @@ else
 fi
 antibody bundle <"${current_dir}/plugins.txt" > $HOME/.zsh_plugins.sh
 antibody update
-
-source $HOME/.zshrc

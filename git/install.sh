@@ -9,9 +9,6 @@ if [[ ! -e $HOME/.gitconfig ]]; then
   ln -s $HOME/.dotfiles/git/.gitconfig $HOME/.gitconfig
   echo "${success}Linked ${HOME}/.dotfiles/git/.gitconfig to ${HOME}/gitconfig.${reset}"
 
-  ln -s $HOME/.dotfiles/git/.gitignore $HOME/.gitignore
-  echo "${success}Linked ${HOME}/.dotfiles/git/.gitignore to ${HOME}/gitignore.${reset}"
-
   echo "${question}What is your name?${reset}"
   read -r user_name
   echo "${question}What is your email address?${reset}"
@@ -22,4 +19,11 @@ if [[ ! -e $HOME/.gitconfig ]]; then
   echo "${success}Updated ${HOME}/.gitconfig with name and email address.${reset}"
 else
   echo "${info}$HOME/.gitconfig already exists.${reset}"
+fi
+
+if [[ ! -e $HOME/.gitignore ]]; then
+  ln -s $HOME/.dotfiles/git/.gitignore $HOME/.gitignore
+  echo "${success}Linked ${HOME}/.dotfiles/git/.gitignore to ${HOME}/gitignore.${reset}"
+else
+  echo "${info}$HOME/.gitignore already exists.${reset}"
 fi
