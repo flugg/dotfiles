@@ -4,3 +4,5 @@
 [user]
 	name = Alexander Tømmerås
 	email = flugged@gmail.com
+[pull]
+	ff = only
