@@ -63,7 +63,6 @@ else
 				exit
 				;;
 			"-s"|"--sync")
-			git commit -a -m
 				(cd $HOME/.dotfiles && git commit -a -m "Sync local dotfiles changes" && git pull && git push)
 				exit
 				;;
