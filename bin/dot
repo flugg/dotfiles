@@ -29,6 +29,7 @@ usage() {
 	echo "${header}Options:${reset}"
 	echo "  ${success}-h, --help${reset}     Show this help screen"
 	echo "  ${success}-v, --version${reset}  Show the version"
+	echo "  ${success}-u, --upgrade${reset}  Pull the latest version of dotfiles"
 	echo "  ${success}-e, --edit${reset}     Open dotfiles directory in editor"
 	exit
 }
