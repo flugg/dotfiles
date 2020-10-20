@@ -13,7 +13,7 @@ fi
 
 if [[ $(command -v brew) == "" ]]; then
   echo "› ${message}Installing Homebrew...${reset}"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   echo "${success}Homebrew successfully installed.${reset}"
 else
   echo "› ${message}Updating Homebrew recipes...${reset}"
