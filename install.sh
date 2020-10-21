@@ -1,5 +1,5 @@
 current_dir="$( cd "$( dirname "$0" )" && pwd )"
-installers=(git brew zsh vim macos)
+installers=(git brew zsh vim mac)
 
 message=$(tput bold)$(tput setaf 6)
 error=`tput setaf 1`

@@ -1,10 +1,10 @@
-#!/bin/zsh
+#!/bin/sh
 
 # dot - CLI for installing dotfiles
 
 version=0.1.0
 current_dir="$( cd "$( dirname "$0" )" && pwd )"
-commands=(`find "$current_dir/.." -name install.sh -mindepth 2 | sort | xargs -n1 dirname | xargs -n1 basename`)
+commands=(`find /Users/flugg/.dotfiles -name install.sh -mindepth 2 | sort | xargs -n1 dirname | xargs -n1 basename`)
 
 error=`tput setaf 1`
 success=`tput setaf 2`
@@ -41,8 +41,6 @@ install() {
 	else
 		$DOTFILES/$1/install.sh
 	fi
-
-	source $HOME/.zshrc
 }
 
 if [[ $# -eq 0 ]] ; then
